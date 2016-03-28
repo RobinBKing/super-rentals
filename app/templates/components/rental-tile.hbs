@@ -1,4 +1,6 @@
 <li>{{rental.owner}}'s {{rental.type}} in {{rental.city}}
+<!-- isImageShowing = false (in rental-tile.js), if true then will show info
+ imageShow, imageHide defined in rental-tile.js-->
   {{#if isImageShowing}}
     <p>
       <img src={{rental.image}} alt={{rental.type}} {{action 'imageHide'}}/>
