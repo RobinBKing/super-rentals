@@ -10,11 +10,19 @@ export default Ember.Route.extend({
   model() {
     return this.store.findAll('rental');
   },
+
 //info is passed up from index.hbs, here is where we actaully destroy the rental
-  action: {
+// We use the params to create a new rental record in the store and then save it. We transition back to our index page and see our new rental in the list.
+actions: {
+  save3(params) {
+    var newRental = this.store.createRecord('rental', params);
+    newRental.save();
+    this.transitionTo('index');
+  },
+
     destroyRental(rental) {
       rental.destroyRecord();
-      this.transitionTO('index');
+      this.transitionTo('index');
     }
   }
 });
