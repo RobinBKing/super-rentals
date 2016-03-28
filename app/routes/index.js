@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-//model
+//model (now in rentals.json and imported into database)
 
 // var rentals = [{
 //   id: 1,
@@ -32,4 +32,11 @@ export default Ember.Route.extend({
   model() {
     return this.store.findAll('rental');
   },
+
+  action: {
+    destroyRental(rental) {
+      rental.destroyRecord();
+      this.transitionTO('index');
+    }
+  }
 });
