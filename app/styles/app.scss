@@ -1,0 +1,14 @@
+@import "bourbon";
+// body {
+// color: blue;
+// }
+
+.jumbotron {
+  background-color: purple;
+  border-radius: 20%;
+  h1 {
+    color: green;
+    text-shadow: 3px 3px 3px black;
+    text-align: center;
+  }
+}
