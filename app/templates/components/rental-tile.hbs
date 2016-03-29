@@ -1,12 +1,7 @@
-<li>{{rental.owner}}'s {{rental.type}} in {{rental.city}}
-<!-- isImageShowing = false (in rental-tile.js), if true then will show info
- imageShow, imageHide defined in rental-tile.js-->
+<li>{{#link-to 'rental' rental.id}}{{rental.owner}}'s {{rental.type}} in    {{rental.city}} {{/link-to}}
   {{#if isImageShowing}}
-    <p>
-      <img src={{rental.image}} alt={{rental.type}} {{action 'imageHide'}}/>
-    </p>
-    {{else}}
-      <button {{action 'imageShow'}}>Show image</button>
-    {{/if}}
-    <button {{action 'delete' rental}}>Delete</button>
+    <p><img src={{rental.image}} alt={{rental.type}} {{action 'imageHide'}}></p>
+  {{else}}
+    <button {{action 'imageShow'}}>Image</button>
+  {{/if}}
 </li>
